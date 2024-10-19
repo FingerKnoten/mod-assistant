@@ -21,6 +21,7 @@ INSERT INTO `creature_template_model` (`CreatureID`, `Idx`, `CreatureDisplayID`,
 (@Entry, 0, @Model, 1, 1);
 
 DELETE FROM `creature` WHERE `id1`=@Entry;
+/*
 INSERT INTO `creature` (`id1`, `map`, `position_x`, `position_y`, `position_z`, `orientation`) VALUES
 (@Entry, 0, -8824.65, 649.467, 94.5585, 4.47955), -- Stormwind City
 (@Entry, 0, -4956.91, -932.369, 501.66, 4.77523), -- City of Ironforge
@@ -32,6 +33,7 @@ INSERT INTO `creature` (`id1`, `map`, `position_x`, `position_y`, `position_z`, 
 (@Entry, 530, 9469.83, -7294.44, 14.3078, 0.105431), -- Silvermoon City
 (@Entry, 530, -1814.49, 5425.97, -12.4281, 2.87456), -- Shattrath City
 (@Entry, 571, 5791.71, 560.464, 650.657, 1.79314); -- Dalaran
+*/
 
 -- Major Glyphs
 UPDATE `item_template` SET `BuyPrice`=0, `SellPrice`=0 WHERE `entry` IN (43412, 43413, 43414, 43415, 43416, 43417, 43418, 43419, 43420, 43421, 43422, 43423, 43424, 43425, 43426, 43427, 43428, 43429, 43430, 43431, 43432, 45790, 45792, 45793, 45794, 45795, 45797);
