@@ -20,12 +20,12 @@ DELETE FROM `creature_template_model` WHERE `CreatureID`=@Entry;
 INSERT INTO `creature_template_model` (`CreatureID`, `Idx`, `CreatureDisplayID`, `DisplayScale`, `Probability`) VALUES
 (@Entry, 0, @Model, 1, 1);
 
-/*
+
 DELETE FROM `creature` WHERE `id1`=@Entry;
 INSERT INTO `creature` (`id1`, `map`, `position_x`, `position_y`, `position_z`, `orientation`) VALUES (@Entry, 0, -8826.67, 647.895, 94.5335, 4.88248);
 INSERT INTO `creature` (`id1`, `map`, `position_x`, `position_y`, `position_z`, `orientation`) VALUES (@Entry, 1, 1636.57, -4417.05, 16.1374, 0.881983);
 
-
+/*
 INSERT INTO `creature` (`id1`, `map`, `position_x`, `position_y`, `position_z`, `orientation`) VALUES
 (@Entry, 0, -8824.65, 649.467, 94.5585, 4.47955), -- Stormwind City
 (@Entry, 0, -4956.91, -932.369, 501.66, 4.77523), -- City of Ironforge
