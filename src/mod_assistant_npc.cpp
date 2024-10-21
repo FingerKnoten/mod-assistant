@@ -1,47 +1,53 @@
 #include "mod_assistant.h"
+#include "mod-boost.h"
 
 bool Assistant::OnGossipHello(Player* player, Creature* creature)
 {
     ClearGossipMenuFor(player);
 
-    if (HeirloomsEnabled)
+    if (isPlayerBoostable(player))
     {
-        AddGossipItemFor(player, GOSSIP_ICON_CHAT, GOSSIP_HEIRLOOMS, GOSSIP_SENDER_MAIN, ASSISTANT_GOSSIP_HEIRLOOM);
-    }
+    
+        if (HeirloomsEnabled)
+        {
+            AddGossipItemFor(player, GOSSIP_ICON_CHAT, GOSSIP_HEIRLOOMS, GOSSIP_SENDER_MAIN, ASSISTANT_GOSSIP_HEIRLOOM);
+        }
 
-    if (GlyphsEnabled)
-    {
-        AddGossipItemFor(player, GOSSIP_ICON_CHAT, GOSSIP_GLYPHS, GOSSIP_SENDER_MAIN, ASSISTANT_GOSSIP_GLYPH);
-    }
+        if (GlyphsEnabled)
+        {
+            AddGossipItemFor(player, GOSSIP_ICON_CHAT, GOSSIP_GLYPHS, GOSSIP_SENDER_MAIN, ASSISTANT_GOSSIP_GLYPH);
+        }
 
-    if (GemsEnabled)
-    {
-        AddGossipItemFor(player, GOSSIP_ICON_CHAT, GOSSIP_GEMS, GOSSIP_SENDER_MAIN, ASSISTANT_GOSSIP_GEM);
-    }
+        if (GemsEnabled)
+        {
+            AddGossipItemFor(player, GOSSIP_ICON_CHAT, GOSSIP_GEMS, GOSSIP_SENDER_MAIN, ASSISTANT_GOSSIP_GEM);
+        }
 
-    if (ContainersEnabled)
-    {
-        AddGossipItemFor(player, GOSSIP_ICON_CHAT, GOSSIP_CONTAINERS, GOSSIP_SENDER_MAIN, ASSISTANT_GOSSIP_CONTAINER);
-    }
+        if (ContainersEnabled)
+        {
+            AddGossipItemFor(player, GOSSIP_ICON_CHAT, GOSSIP_CONTAINERS, GOSSIP_SENDER_MAIN, ASSISTANT_GOSSIP_CONTAINER);
+        }
 
-    if (UtilitiesEnabled)
-    {
-        AddGossipItemFor(player, GOSSIP_ICON_CHAT, GOSSIP_UTILITIES, GOSSIP_SENDER_MAIN, ASSISTANT_GOSSIP_UTILITIES);
-    }
+        if (UtilitiesEnabled)
+        {
+            AddGossipItemFor(player, GOSSIP_ICON_CHAT, GOSSIP_UTILITIES, GOSSIP_SENDER_MAIN, ASSISTANT_GOSSIP_UTILITIES);
+        }
 
-    if (CanUnlockFlightPaths(player))
-    {
-        AddGossipItemFor(player, GOSSIP_ICON_CHAT, GOSSIP_FLIGHT_PATHS, GOSSIP_SENDER_MAIN, ASSISTANT_GOSSIP_FLIGHT_PATHS);
-    }
+        if (CanUnlockFlightPaths(player))
+        {
+            AddGossipItemFor(player, GOSSIP_ICON_CHAT, GOSSIP_FLIGHT_PATHS, GOSSIP_SENDER_MAIN, ASSISTANT_GOSSIP_FLIGHT_PATHS);
+        }
 
-    if (HasValidProfession(player))
-    {
-        AddGossipItemFor(player, GOSSIP_ICON_CHAT, GOSSIP_PROFESSIONS, GOSSIP_SENDER_MAIN, ASSISTANT_GOSSIP_PROFESSIONS);
-    }
+        if (HasValidProfession(player))
+        {
+            AddGossipItemFor(player, GOSSIP_ICON_CHAT, GOSSIP_PROFESSIONS, GOSSIP_SENDER_MAIN, ASSISTANT_GOSSIP_PROFESSIONS);
+        }
 
-    if (CanResetInstances(player))
-    {
-        AddGossipItemFor(player, GOSSIP_ICON_CHAT, GOSSIP_INSTANCES, GOSSIP_SENDER_MAIN, ASSISTANT_GOSSIP_INSTANCES);
+        if (CanResetInstances(player))
+        {
+            AddGossipItemFor(player, GOSSIP_ICON_CHAT, GOSSIP_INSTANCES, GOSSIP_SENDER_MAIN, ASSISTANT_GOSSIP_INSTANCES);
+        }
+
     }
 
     SendGossipMenuFor(player, ASSISTANT_GOSSIP_TEXT, creature->GetGUID());
