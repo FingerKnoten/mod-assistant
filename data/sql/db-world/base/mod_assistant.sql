@@ -602,4 +602,4 @@ INSERT INTO `npc_vendor` (`entry`, `item`) VALUES
 (@Entry+30, 3604), -- Bandolier of the Night Watch
 (@Entry+30, 3605), -- Quiver of the Night Watch
 (@Entry+30, 22243), -- Small Soul Pouch
-(@Entry+31, 41599); -- Frostweave Bag
+(@Entry+30, 41599); -- Frostweave Bag
